@@ -1,0 +1,40 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  precompile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Build and package WASM modules
+        uses: cocoa-xu/exclosured-precompiled-action@v1
+        with:
+          modules: exclosured_example_markdown
+          project-version: ${{ github.ref_name }}
+
+      - name: Upload to GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            _build/precompiled/*.tar.gz
+            _build/precompiled/*.sha256
+
+      - name: Generate checksums
+        run: |
+          mix exclosured_precompiled.checksum \
+            --local \
+            --dir _build/precompiled \
+            --module ExclosuredExample.Precompiled
+
+      - name: Publish to Hex
+        if: ${{ !contains(github.ref_name, '-') }}
+        env:
+          HEX_API_KEY: ${{ secrets.HEX_API_KEY }}
+        run: mix hex.publish --yes
