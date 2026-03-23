@@ -1,6 +1,6 @@
 %{
   "castore": {:hex, :castore, "1.0.18", "5e43ef0ec7d31195dfa5a65a86e6131db999d074179d2ba5a8de11fe14570f55", [:mix], [], "hexpm", "f393e4fe6317829b158fb74d86eb681f737d2fe326aa61ccf6293c4104957e34"},
   "exclosured": {:hex, :exclosured, "0.1.1", "18142bc5aaba67c51acec9a14b05973ef50dcd8d9b3d20ed7fa32eab82067974", [:mix], [{:jason, "~> 1.0", [hex: :jason, repo: "hexpm", optional: true]}, {:phoenix, "~> 1.7", [hex: :phoenix, repo: "hexpm", optional: true]}, {:phoenix_live_view, "~> 1.0", [hex: :phoenix_live_view, repo: "hexpm", optional: true]}, {:telemetry, "~> 1.0", [hex: :telemetry, repo: "hexpm", optional: false]}], "hexpm", "af5bdd2e29afa76763c8a586e116b36e883c33a22b14d264cc3e75404f0d192d"},
-  "exclosured_precompiled": {:hex, :exclosured_precompiled, "0.1.0", "d453cd0a71cf67839f48438c3d2bb9de2e6fe7de43f821e73bfca65c02944967", [:mix], [{:castore, "~> 0.1 or ~> 1.0", [hex: :castore, repo: "hexpm", optional: false]}], "hexpm", "6e06699502051df6f494a058638f440ac3bece6581abe6b2c192cff72e29eed6"},
+  "exclosured_precompiled": {:hex, :exclosured_precompiled, "0.1.0", "bcf71b16054cca40cb3d1204ee95534d5ee0d740276c46c3f89c37b1ab568496", [:mix], [{:castore, "~> 0.1 or ~> 1.0", [hex: :castore, repo: "hexpm", optional: false]}], "hexpm", "5bca4bce245f5bdef461119306b8d5191133312ec4d242297be7e837d71b2c3c"},
   "telemetry": {:hex, :telemetry, "1.4.1", "ab6de178e2b29b58e8256b92b382ea3f590a47152ca3651ea857a6cae05ac423", [:rebar3], [], "hexpm", "2172e05a27531d3d31dd9782841065c50dd5c3c7699d95266b2edd54c2dafa1c"},
 }

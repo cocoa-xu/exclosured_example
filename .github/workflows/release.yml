@@ -10,6 +10,8 @@ permissions:
 jobs:
   precompile:
     runs-on: ubuntu-latest
+    env:
+      MIX_ENV: prod
     steps:
       - uses: actions/checkout@v5
 
@@ -25,16 +27,3 @@ jobs:
           files: |
             _build/precompiled/*.tar.gz
             _build/precompiled/*.sha256
-
-      - name: Generate checksums
-        run: |
-          mix exclosured_precompiled.checksum \
-            --local \
-            --dir _build/precompiled \
-            --module ExclosuredExample.Precompiled
-
-      - name: Publish to Hex
-        if: ${{ !contains(github.ref_name, '-') }}
-        env:
-          HEX_API_KEY: ${{ secrets.HEX_API_KEY }}
-        run: mix hex.publish --yes
